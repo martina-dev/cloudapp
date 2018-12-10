@@ -63,17 +63,10 @@ deploy:
    - internal/docker-push:
        username: $DOCKER_USERNAME
        password: $DOCKER_PASSWORD
-       cmd: /pipeline/source/hello
+       cmd: /cloudapp
        port: "8080"
        tag: latest
-       repository: cloudnativego/book-hello
+       repository: martinadev/cloudapp
        registry: https://registry.hub.docker.com
 
-   - cng/cf-deploy:
-       api: $API
-       user: $USER
-       password: $PASSWORD
-       org: $ORG
-       space: $SPACE
-       appname: wercker-step-hello
-       docker_image: cloudnativego/book-hello
+   
