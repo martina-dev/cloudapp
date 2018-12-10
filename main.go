@@ -1,9 +1,18 @@
 package main
 
 import (
-	"fmt"
+	"os"
+
+	service "github.com/martina-dev/cloudapp/service"
 )
 
 func main() {
-	fmt.Println("Hello From the other side")
+	port := os.Getenv("PORT")
+	if len(port) == 0 {
+		port = "8000"
+	}
+
+	server := service.NewServer()
+	server.Run(":" + port)
+
 }
