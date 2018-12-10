@@ -1,0 +1,3 @@
+package: github.com/martina-dev/cloudapp
+import:
+- package: github.com/codegangsta/negroni
